@@ -59,7 +59,7 @@ class ProfilPahlawanPage extends StatelessWidget {
             const SizedBox(height: 20),
 
             // 4. Narasi biografi
-            // _buildBiographyParagaph(),
+            _buildBiographyParagaph(),
             const SizedBox(height: 30),
           ],
         ),
@@ -169,6 +169,25 @@ Widget _buildQuoteBox() {
           color: Color(0xFF6B1D2F),
           height: 1.5,
         ),
+      ),
+    ),
+  );
+}
+
+Widget _buildBiographyParagaph() {
+  const String biographyText =
+      'Tan Malaka merupakan salah satu pemikir utama kemerdekaan Indonesia yang banyak bergerak di bawah tanah. Melalui karyanya yang monumental, Naar de \'Republiek Indonesia\' pada tahun 1925, beliau menjadi sosok pertama yang merumuskan gagasan dan konsep negara Republik Indonesia secara terstruktur—jauh 20 tahun sebelum Proklamasi 1945 diproklamasikan.\n\n'
+      'Karena pemikirannya yang kritis dan pergerakannya yang melintasi berbagai negara di bawah ancaman kolonial, ia kerap menggunakan belasan nama samaran. Atas jasa dan dedikasi pemikirannya bagi fondasi bangsa, Presiden Soekarno menetapkan Tan Malaka sebagai Pahlawan Nasional pada tahun 1963.';
+
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+    child: Text(
+      biographyText,
+      textAlign: .justify,
+      style: const TextStyle(
+        fontSize: 14,
+        height: 1.5,
+        color: Color(0xFF2A2A2A),
       ),
     ),
   );
