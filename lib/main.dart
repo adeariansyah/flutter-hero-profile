@@ -37,7 +37,9 @@ class ProfilPahlawanPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Jejak Sejarah: Tan Malaka')),
+      appBar: AppBar(
+        title: const Text('Arsip Tokoh', style: TextStyle(fontWeight: .bold)),
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: .center,
@@ -53,7 +55,7 @@ class ProfilPahlawanPage extends StatelessWidget {
             const SizedBox(height: 20),
 
             // 3. Kotak kutipan
-            // _buildQuoteBox(),
+            _buildQuoteBox(),
             const SizedBox(height: 20),
 
             // 4. Narasi biografi
@@ -141,5 +143,33 @@ Widget _buildIdentityBlock() {
         ],
       ),
     ],
+  );
+}
+
+Widget _buildQuoteBox() {
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+    child: Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: const Color(0xFFF4EBE1),
+        borderRadius: .circular(12),
+        border: Border.all(
+          color: const Color(0xFF6B1D2F).withValues(alpha: 0.3),
+          width: 1,
+        ),
+      ),
+      child: const Text(
+        '"Ingatlah! Bahwa dari dalam kubur, suara saya akan lebih keras daripada dari atas bumi."\n— Tan Malaka',
+        textAlign: .center,
+        style: TextStyle(
+          fontSize: 15,
+          fontStyle: .italic,
+          color: Color(0xFF6B1D2F),
+          height: 1.5,
+        ),
+      ),
+    ),
   );
 }
