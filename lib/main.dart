@@ -49,7 +49,7 @@ class ProfilPahlawanPage extends StatelessWidget {
             const SizedBox(height: 20),
 
             // 2. Blok identitas tokoh
-            // _buildIdentityBlock(),
+            _buildIdentityBlock(),
             const SizedBox(height: 20),
 
             // 3. Kotak kutipan
@@ -95,5 +95,51 @@ Widget _buildFramedImage() {
         },
       ),
     ),
+  );
+}
+
+Widget _buildIdentityBlock() {
+  const maroonColor = Color(0xFF6B1D2F);
+  const greyColor = Color(0xFF666666);
+  const deepCharcoal = Color(0xFF2A2A2A);
+
+  return Column(
+    children: [
+      // Nama
+      const Text(
+        'TAN MALAKA',
+        style: TextStyle(
+          fontSize: 24,
+          fontWeight: .bold,
+          color: deepCharcoal,
+          letterSpacing: 1.2,
+        ),
+        textAlign: .center,
+      ),
+      const SizedBox(height: 8),
+      // tagline
+      const Text(
+        'Bapak Republik dari Balik Bayang-Bayang',
+        style: TextStyle(fontSize: 14, fontStyle: .italic, color: maroonColor),
+        textAlign: .center,
+      ),
+      const SizedBox(height: 12),
+      Row(
+        mainAxisAlignment: .center,
+        children: [
+          const Icon(Icons.location_on, size: 16, color: greyColor),
+          const SizedBox(width: 4),
+          Text(
+            'Suliki, Sumatera Barat',
+            style: TextStyle(fontSize: 13, color: greyColor),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8.0),
+            child: Text('•', style: TextStyle(color: greyColor)),
+          ),
+          Text('1897 – 1949', style: TextStyle(fontSize: 13, color: greyColor)),
+        ],
+      ),
+    ],
   );
 }
