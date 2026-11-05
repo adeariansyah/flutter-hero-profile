@@ -38,7 +38,62 @@ class ProfilPahlawanPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Jejak Sejarah: Tan Malaka')),
-      body: const Center(child: Text('Memuat profil...')),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: .center,
+          children: [
+            const SizedBox(height: 30),
+
+            // 1. Bingkai foto
+            _buildFramedImage(),
+            const SizedBox(height: 20),
+
+            // 2. Blok identitas tokoh
+            // _buildIdentityBlock(),
+            const SizedBox(height: 20),
+
+            // 3. Kotak kutipan
+            // _buildQuoteBox(),
+            const SizedBox(height: 20),
+
+            // 4. Narasi biografi
+            // _buildBiographyParagaph(),
+            const SizedBox(height: 30),
+          ],
+        ),
+      ),
     );
   }
+}
+
+Widget _buildFramedImage() {
+  return Container(
+    width: 180,
+    height: 220,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(16),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black.withValues(alpha: 0.15),
+          blurRadius: 10,
+          offset: const Offset(0, 5),
+        ),
+      ],
+    ),
+    child: ClipRRect(
+      borderRadius: BorderRadius.circular(16),
+      child: Image.asset(
+        'assets/images/tan_malaka.jpg',
+        fit: BoxFit.cover,
+        errorBuilder: (context, error, stackTrace) {
+          return Container(
+            color: Colors.grey[300],
+            child: const Center(
+              child: Icon(Icons.person, size: 80, color: Colors.grey),
+            ),
+          );
+        },
+      ),
+    ),
+  );
 }
